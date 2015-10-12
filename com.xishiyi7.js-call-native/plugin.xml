@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="com.xishiyi7.js-call-native" version="0.0.1"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>jsCallNative</name>
+    <description> cordova(ionic/phonegap) plugin: "js call native" </description>
+	<license>Apache 2.0</license>
+	<keywords>cordova,js,native,plugin,ionic,phonegap,call</keywords>
+	<repo>https://github.com/xishiyi7/js-call-native.git</repo>
+    <js-module name="jsCallNative" src="www/jsCallNative.js">
+        <clobbers target="cordova.plugins.jsCallNative"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="JsCallNative">
+                <param name="android-package" value="com.xishiyi7.plugins.JsCallNative"/>
+            </feature>
+        </config-file>
+		
+        <source-file src="src/android/JsCallNative.java" target-dir="src/com/xishiyi7/plugins"/>        
+    </platform>
+</plugin>
